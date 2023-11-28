@@ -1,0 +1,25 @@
+-------install jenkins on vagrant-----------
+
+
+sudo apt update
+#java-install
+sudo apt install openjdk-8-jdk
+
+java -version
+
+#openjdk version "1.8.0_265"
+#OpenJDK Runtime Environment (build 1.8.0_265-8u265-b01-0ubuntu2~18.04-b01)
+#OpenJDK 64-Bit Server VM (build 25.265-b01, mixed mode)
+
+
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+
+sudo sh -c 'echo deb [trusted=yes] https://pkg.jenkins.io/debian-stable binary/ > \
+    /etc/apt/sources.list.d/jenkins.list'
+
+sudo apt-get update
+sudo apt-get install fontconfig openjdk-11-jre
+sudo apt-get install jenkins
+
+#add to network local
+vagrant plugin install vagrant-vbguest
